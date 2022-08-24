@@ -16,11 +16,30 @@ func lenAndUpper(name string) (int, string) {
 	return len(name), strings.ToUpper(name)
 }
 
+// * Naked function function
+func lenAndLower(name string) (length int, lowercase string) {
+	// These variables below are declared as arguments
+	// Not declaring, but modifying
+	length = len(name)
+	lowercase = strings.ToLower(name)
+	// Naked  return
+	return
+}
+
+// * DEFER
+// 함수가 실행 종료되었을 때 추가적인 행동을 명령할 수 있다
+func lenAndLowerDefer(name string) (int, string) {
+	// Decorator처럼 쓸 수도, 콜백처럼 쓸 수도 있다. 캐시를 삭제하다던가 사용한 파일을 삭제한다던가
+	defer fmt.Println("This function is done")
+	return lenAndLower(name)
+}
+
 func multiply(a int, b int) int {
 	return a * b
 }
 
-func repeatMe(words ...string) string {
+func repeatMe(words ...string) {
+	fmt.Println(words)
 }
 
 func main() {
@@ -30,6 +49,6 @@ func main() {
 	println(multiply(2, 2))
 	length, _ := lenAndUpper("wontae")
 	fmt.Println(length)
-
 	repeatMe("wontea", "lynn", "dal")
+	lenAndLowerDefer("hongjun")
 }
