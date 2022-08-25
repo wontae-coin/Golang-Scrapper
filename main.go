@@ -2,7 +2,7 @@ package main
 
 //* main entry point for the compiled code
 //* If not using the compiled code and wanting to share the code in any form like library etc.
-// not necessary to name this 'main.go'
+//* then is is not necessary to name this 'main.go'
 
 import (
 	"fmt"
@@ -10,6 +10,11 @@ import (
 
 	"github.com/wontae/learngo/something"
 )
+
+// * 함수
+func multiply(a int, b int) int {
+	return a * b
+}
 
 // * GO func can have many return values
 func lenAndUpper(name string) (int, string) {
@@ -34,19 +39,23 @@ func lenAndLowerDefer(name string) (int, string) {
 	return lenAndLower(name)
 }
 
-func multiply(a int, b int) int {
-	return a * b
-}
-
+// ! Variadic Function (가변인자함수)
 func repeatMe(words ...string) {
 	fmt.Println(words)
 }
 
-func superAdd(numbers ...int) int {
-	for number := range numbers {
-		fmt.Println(number)
-	}
-	return 1
+// ! 함수에 파라미터를 전달하는 법
+// * Pass by value
+func say(msg string) {
+	println(msg)
+}
+
+// * Pass by reference
+func bye(msg *string) {
+	// 파라미터가 포인터임을 표시하는 법 *
+	println("받아온건 주소!", msg)
+	println("주소가 가졌던/가지는 값을 가져오려면 dereferencing:", *msg)
+	*msg = "Changed"
 }
 
 func main() {
@@ -58,6 +67,11 @@ func main() {
 	fmt.Println(length)
 	lenAndLowerDefer("hongjun")
 	repeatMe("wontea", "lynn", "dal")
-	total := superAdd(1, 2, 3, 4, 5, 6)
-	fmt.Println(total)
+
+	msg := "Hello"
+	say(msg)
+	//* pointer, RUST의 reference(빌림)과 다르다
+	//* msg의 값을 가져오는게 아니라 msg 변수의 주소를 가져온다
+	bye(&msg)
+	println(msg)
 }
