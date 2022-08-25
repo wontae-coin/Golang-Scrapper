@@ -42,6 +42,13 @@ func repeatMe(words ...string) {
 	fmt.Println(words)
 }
 
+func superAdd(numbers ...int) int {
+	for number := range numbers {
+		fmt.Println(number)
+	}
+	return 1
+}
+
 func main() {
 	fmt.Println("Hi")
 	something.SayHello()
@@ -49,6 +56,8 @@ func main() {
 	println(multiply(2, 2))
 	length, _ := lenAndUpper("wontae")
 	fmt.Println(length)
-	repeatMe("wontea", "lynn", "dal")
 	lenAndLowerDefer("hongjun")
+	repeatMe("wontea", "lynn", "dal")
+	total := superAdd(1, 2, 3, 4, 5, 6)
+	fmt.Println(total)
 }
