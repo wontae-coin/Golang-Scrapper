@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/wontae/learngo/something"
+	"github.com/wontae-coin/Golang-Scrapper/something"
 )
 
 // * 함수

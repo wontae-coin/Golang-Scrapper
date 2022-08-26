@@ -1,3 +1,3 @@
-module github.com/wontae/learngo
+module scrapper
 
 go 1.19

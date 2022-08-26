@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	//* 해시테이블
 	var idMap map[int]string
@@ -20,6 +22,16 @@ func main() {
 		"FB":   "FaceBook",
 	}
 
-	//* 값 읽기
+	//* 값 읽기 (value, isExist)
+	val, isExist := tickers["MSFT"]
+	if !isExist {
+		println("No MSFT ticker")
+	}
+	println(val)
+
+	for key, val := range tickers {
+		fmt.Println(key, val)
+	}
 	// http://golang.site/go/article/14-Go-%EC%BB%AC%EB%A0%89%EC%85%98---Map
+	//* loop 돌면서 열거함
 }
