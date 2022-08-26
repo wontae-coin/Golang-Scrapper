@@ -7,8 +7,6 @@ package main
 import (
 	"fmt"
 	"strings"
-
-	"github.com/wontae-coin/Golang-Scrapper/something"
 )
 
 // * 함수
@@ -60,7 +58,6 @@ func bye(msg *string) {
 
 func main() {
 	fmt.Println("Hi")
-	something.SayHello()
 	const name = "wontae"
 	println(multiply(2, 2))
 	length, _ := lenAndUpper("wontae")

@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // * struct 정의
 type person struct {
 	name string
@@ -15,5 +17,9 @@ func main() {
 
 	p.name = "Lee"
 	p.age = 10
+	fmt.Println(p)
+	//* constructor가 없는데도 초기화는 가능합니다
+	p2 := person{name: "Sean", age: 50}
+	fmt.Println(p2)
 
 }
