@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func learnMap() {
 	//* 해시테이블
 	var idMap map[int]string
 	//* zero value타입: undefined와 같이 변수가 선언만 되고 초기화가 되지 않았을 때

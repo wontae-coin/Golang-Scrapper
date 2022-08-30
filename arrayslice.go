@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func learnArraySlice() {
 	//* go array의 length는 최대값이다. 작아도 에러는 발생하지 않는다. 넘으면 발생
 	names := [5]string{"a", "b", "c"}
 	fmt.Println(names)

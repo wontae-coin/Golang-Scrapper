@@ -1,6 +1,6 @@
 package main
 
-func main() {
+func getLoop() {
 	//* 기본형식: 초기값;조건식;증감
 	sum := 0
 	for i := 1; i <= 100; i++ {
