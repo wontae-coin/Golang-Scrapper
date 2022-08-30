@@ -36,13 +36,13 @@ func lenAndLowerDefer(name string) (int, string) {
 //! ---------------------------------------------
 
 // * Pass by value
-//! boolean, numeric(int, float), string
+// ! boolean, numeric(int, float), string
 func say(msg string) {
 	println(msg)
 }
 
 // * Pass by reference
-//! function, pointer, slice, array
+// ! function, pointer, slice, array
 func bye(msg *string) {
 	// 파라미터가 포인터임을 표시하는 법 *
 	println("받아온건 주소!", msg)
@@ -50,8 +50,8 @@ func bye(msg *string) {
 	*msg = "Changed"
 }
 
-//* Variadic Function (가변인자함수)
-//* arguments들을 모아 array로 만들어 줍니다
+// * Variadic Function (가변인자함수)
+// * arguments들을 모아 array로 만들어 줍니다
 func repeatMe(words ...string) {
 	fmt.Println(words)
 }
